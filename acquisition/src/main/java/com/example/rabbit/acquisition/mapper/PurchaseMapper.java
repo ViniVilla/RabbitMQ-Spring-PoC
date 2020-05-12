@@ -11,7 +11,8 @@ public interface PurchaseMapper {
 
     @Mappings({
             @Mapping(target = "id", ignore = true),
-            @Mapping(target = "totalPrice", ignore = true)
+            @Mapping(target = "totalPrice", ignore = true),
+            @Mapping(target = "status", ignore = true)
     })
     Purchase requestToEntity(PurchaseRequest request);
 

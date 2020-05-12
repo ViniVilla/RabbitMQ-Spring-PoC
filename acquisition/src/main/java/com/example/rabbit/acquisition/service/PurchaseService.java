@@ -45,7 +45,7 @@ public class PurchaseService {
 
         try{
             PaymentMessage message = new PaymentMessage(purchase.getId(), purchase.getTotalPrice());
-            rabbitTemplate.convertAndSend("payment_processing_queue", objectMapper.writeValueAsString(request));
+            rabbitTemplate.convertAndSend("payment_processing_queue", objectMapper.writeValueAsString(message));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
