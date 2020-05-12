@@ -1,6 +1,7 @@
 package com.example.rabbit.acquisition.resource;
 
 import com.example.rabbit.acquisition.domain.entity.Purchase;
+import com.example.rabbit.acquisition.domain.request.PurchaseRequest;
 import com.example.rabbit.acquisition.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,8 +21,8 @@ public class PurchaseResource {
     }
 
     @PostMapping
-    public void createPurchase(@RequestBody Purchase purchase) {
-        purchaseService.createPurchase(purchase);
+    public void createPurchase(@RequestBody PurchaseRequest request) {
+        purchaseService.createPurchase(request);
     }
 
 }
