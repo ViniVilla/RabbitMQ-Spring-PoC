@@ -32,10 +32,10 @@ public class PaymentService {
             PaymentMessage message = objectMapper.readValue(body, PaymentMessage.class);
             log.info("m=processPayment, body={}, message={}", body, message);
 
-            Thread.sleep(5000);
+            Thread.sleep(30000);
             sendStatusMessage(PurchaseStatusEnum.WAITING_FOR_CONFIRMATION, message.getPurchaseId());
 
-            Thread.sleep(5000);
+            Thread.sleep(30000);
             sendStatusMessage(PurchaseStatusEnum.PAYED, message.getPurchaseId());
 
         } catch (JsonProcessingException | InterruptedException e) {
